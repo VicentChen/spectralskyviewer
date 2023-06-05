@@ -73,7 +73,7 @@ class ViewFisheye(QWidget):
         self.fontFixed = QFont('Courier New', 8)
         self.fontScaled = QFont('Courier New', 8)
         self.fontMetrics = QFontMetrics(self.fontScaled)
-        self.iconWarning = self.style().standardIcon(QStyle.SP_MessageBoxWarning).pixmap(ViewFisheye.SelectedPixelBox / 2)
+        self.iconWarning = self.style().standardIcon(QStyle.SP_MessageBoxWarning).pixmap(int(ViewFisheye.SelectedPixelBox / 2))
 
     def dataLoaded(self):
         # Note - this function only runs once the data directory has been loaded

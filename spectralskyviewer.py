@@ -335,8 +335,8 @@ class SpectralSkyViewer(QMainWindow):
         self.splitHoriz = QSplitter(Qt.Horizontal)
         self.splitHoriz.addWidget(self.wgtFisheye)
         self.splitHoriz.addWidget(pnlEXIF)
-        self.splitHoriz.setSizes([common.AppSettings["HorizSplitLeft"] if common.AppSettings["HorizSplitLeft"] >= 0 else common.AppSettings["WindowWidth"] * 0.75,
-                                  common.AppSettings["HorizSplitRight"] if common.AppSettings["HorizSplitRight"] >= 0 else common.AppSettings["WindowWidth"] * 0.25])
+        self.splitHoriz.setSizes([int(common.AppSettings["HorizSplitLeft"] if common.AppSettings["HorizSplitLeft"] >= 0 else common.AppSettings["WindowWidth"] * 0.75),
+                                  int(common.AppSettings["HorizSplitRight"] if common.AppSettings["HorizSplitRight"] >= 0 else common.AppSettings["WindowWidth"] * 0.25)])
 
         # upper panel
         boxUpperHalf = QHBoxLayout()
@@ -361,8 +361,8 @@ class SpectralSkyViewer(QMainWindow):
         self.splitVert = QSplitter(Qt.Vertical)
         self.splitVert.addWidget(pnlUpperHalf)
         self.splitVert.addWidget(self.wgtGraph)
-        self.splitVert.setSizes([common.AppSettings["VertSplitTop"] if common.AppSettings["VertSplitTop"] >= 0 else common.AppSettings["WindowHeight"] * 0.75,
-                                 common.AppSettings["VertSplitBottom"] if common.AppSettings["VertSplitBottom"] >= 0 else common.AppSettings["WindowHeight"] * 0.25])
+        self.splitVert.setSizes([int(common.AppSettings["VertSplitTop"] if common.AppSettings["VertSplitTop"] >= 0 else common.AppSettings["WindowHeight"] * 0.75),
+                                 int(common.AppSettings["VertSplitBottom"] if common.AppSettings["VertSplitBottom"] >= 0 else common.AppSettings["WindowHeight"] * 0.25)])
 
         # attach high level panels and vertical splitter to layout of window
         gridMain = QGridLayout()
